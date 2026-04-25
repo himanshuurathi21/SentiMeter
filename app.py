@@ -9,6 +9,29 @@ from model_utils import load_sentiment_model, process_results
 
 # 1. Page Configuration
 st.set_page_config(page_title="SentimentMeter AI", page_icon="", layout="wide")
+st.set_page_config(
+    page_title="SentimentMeter AI", 
+    page_icon="🧪", 
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': None,
+        'Report a bug': None,
+        'About': None
+    }
+)
+
+# Yeh niche wala CSS code icon aur fork button ko hide kar dega
+st.markdown("""
+    <style>
+    /* GitHub icon aur Fork button hide karne ke liye */
+    .stAppDeployButton {
+        display: none;
+    }
+    #MainMenu {visibility: hidden;}
+    header {visibility: hidden;}
+    </style>
+    """, unsafe_allow_html=True)
 
 # CSS for Animations and Layout
 st.markdown("""
