@@ -3,7 +3,7 @@ from transformers import pipeline
 
 @st.cache_resource
 def load_sentiment_model():
-    """Downloads and caches the model so it only runs once."""
+    # RoBERTa model load ho raha hai
     model_path = "cardiffnlp/twitter-roberta-base-sentiment-latest"
     sentiment_pipeline = pipeline(
         "sentiment-analysis", 
@@ -14,14 +14,12 @@ def load_sentiment_model():
     return sentiment_pipeline
 
 def process_results(results):
-    """Formats the raw AI data into a clean list for the UI."""
     mapping = {"negative": "Negative", "neutral": "Neutral", "positive": "Positive"}
     formatted_data = []
     
     if not results:
         return []
 
-    # Handle different list formats from Hugging Face
     actual_results = results[0] if isinstance(results[0], list) else results
     
     for res in actual_results:
