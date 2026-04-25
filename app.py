@@ -70,7 +70,7 @@ with st.sidebar:
             st.divider()
 
 # 4. Main UI
-st.markdown('<div class="main-title"><h1> SentimentMeter: AI Analysis Engine</h1><p style="font-size:18px; color:gray;">Measuring the Emotional Pulse of your Text</p></div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title"><h1> SentimentMeter: Sentiment Analysis Engine</h1><p style="font-size:18px; color:gray;">Measuring the Emotional Pulse of your Text</p></div>', unsafe_allow_html=True)
 
 # Aligned Example Buttons (Positive -> Neutral -> Negative)
 # Aligned Example Buttons (Positive -> Neutral -> Negative)
