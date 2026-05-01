@@ -29,3 +29,14 @@ def process_results(results):
             "Score": round(res['score'] * 100, 2)
         })
     return formatted_data
+# Custom keywords list
+negative_keywords = ['breakup', 'failed', 'accident', 'death', 'hated']
+
+def analyze_sentiment(text):
+    # Pehle manual check karo
+    if any(word in text.lower() for word in negative_keywords):
+        return "Negative", 0.99  # Forced result
+    
+    # Baaki cases mein AI model use karo
+    results = model(text)
+    return results
